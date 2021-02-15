@@ -1,15 +1,13 @@
-FROM node:12
+FROM node:12 AS development
 
-WORKDIR /app
+WORKDIR /src/app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --only-development
 
 COPY . .
 
-ENV PORT=3000
+RUN npm run build
 
-EXPOSE 3000
-
-CMD ["npm", "start"]
+FROM node:12 AS production
