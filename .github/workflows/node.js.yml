@@ -40,6 +40,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: remind-me-server
           environment_name: Remindmeserver-env
-          version_label: v1.2
+          version_label: v1.3
           region: us-east-2
           deployment_package: deploy.zip
