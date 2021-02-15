@@ -1,0 +1,7 @@
+version: "2" # optional since v1.27.0
+services:
+  server:
+    container_name: server
+    build: .
+    ports:
+      - "8080:4000"
