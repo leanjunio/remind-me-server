@@ -6,7 +6,7 @@
   "author": "Lean Junio <leanjunio@outlook.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=8.20.0"
+    "node": "12.16.1"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
