@@ -5,8 +5,19 @@
   "repository": "https://github.com/leanjunio/remind-me-server.git",
   "author": "Lean Junio <leanjunio@outlook.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=8.20.0"
+  },
   "devDependencies": {
     "@types/node": "^14.14.28",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-node": "^11.1.0",
     "typescript": "^4.1.5"
+  },
+  "scripts": {
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx"
   }
 }
