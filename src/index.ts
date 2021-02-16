@@ -17,6 +17,10 @@ const books = [
     author: "Paul Auster",
   },
   {
+    title: "Twilight",
+    author: "Stephanie Meyer",
+  },
+  {
     title: "The Awakening",
     author: "Kate Chopin",
   },
