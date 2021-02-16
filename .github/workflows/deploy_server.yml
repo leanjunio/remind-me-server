@@ -59,10 +59,6 @@ jobs:
           container-name: remind-me-server
           image: ${{ steps.build-image.outputs.image }}
 
-      - name: Download task definition
-        run: |
-          aws ecs describe-task-definition --task-definition my-task-definition-family --query taskDefinition > task-definition.json
-
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
