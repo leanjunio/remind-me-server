@@ -2,6 +2,6 @@ version: "3" # optional since v1.27.0
 services:
   remind-me-server:
     container_name: remind-me-server
-    image: 675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server
+    image: leanjunio/remind-me-server:latest
     ports:
       - "8080:4000"

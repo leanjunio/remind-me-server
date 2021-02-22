@@ -1,7 +1,0 @@
-{
-  "AWSEBDockerrunVersion": "3",
-  "Image": {
-    "Name": "675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server:latest",
-    "Update": true
-  }
-}
