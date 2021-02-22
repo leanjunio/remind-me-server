@@ -23,7 +23,7 @@ jobs:
           tag_with_ref: true
 
   push_to_ecr:
-    name: Deploy to ECS
+    name: Deploy to ECR
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,18 +51,6 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          container-name: remind-me-servecr
-          image: ${{ steps.build-image.outputs.image }}
-
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: remind-me
-          cluster: remind-me
-          wait-for-service-stability: true
+  pull_latest_image:
+    name: SSH into server and pull latest image
+    runs-on: ubuntu-latest

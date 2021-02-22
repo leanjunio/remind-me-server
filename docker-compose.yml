@@ -1,7 +1,7 @@
-version: "2" # optional since v1.27.0
+version: "3" # optional since v1.27.0
 services:
-  server:
-    container_name: server
-    build: .
+  remind-me-server:
+    container_name: remind-me-server
+    image: 675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server
     ports:
       - "8080:4000"
