@@ -51,6 +51,14 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: remind-me-server-container
+          image: ${{ steps.build-image.outputs.image }}
+
       - name: Render Amazon ECS task definition
         id: render-web-container
         uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -65,11 +73,3 @@ jobs:
           task-definition: ${{ steps.render-web-container.outputs.task-definition }}
           service: remind-me-server-service
           cluster: remind-me-server
-
-      - name: Deploy to Amazon ECS
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          service: remind-me-server-service
-          cluster: remind-me-server
-          wait-for-service-stability: true
