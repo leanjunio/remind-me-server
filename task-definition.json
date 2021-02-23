@@ -61,7 +61,7 @@
   "memory": "512",
   "taskRoleArn": "arn:aws:iam::675453480852:role/ecsTaskExecutionRole",
   "compatibilities": ["EC2", "FARGATE"],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-server:3",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-server:5",
   "family": "remind-me-server",
   "requiresAttributes": [
     {
@@ -117,7 +117,7 @@
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 3,
+  "revision": 5,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
