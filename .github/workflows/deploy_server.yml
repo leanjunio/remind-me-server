@@ -56,7 +56,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: remind-me-server
+          container-name: remind-me-server-container
           image: amazon/amazon-ecs-sample:latest
 
       - name: Deploy to Amazon ECS service
