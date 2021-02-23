@@ -9,12 +9,12 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/remind-me-server",
-          "awslogs-region": "us-east-2",
+          "awslogs-group": "/ecs/first-run-task-definition",
+          "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "entryPoint": null,
+      "entryPoint": [],
       "portMappings": [
         {
           "hostPort": 4000,
@@ -22,7 +22,7 @@
           "containerPort": 4000
         }
       ],
-      "command": null,
+      "command": [],
       "linuxParameters": null,
       "cpu": 0,
       "environment": [],
@@ -37,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "docker.io/leanjunio/remind-me-server",
+      "image": "675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -45,7 +45,7 @@
       "interactive": null,
       "healthCheck": null,
       "essential": true,
-      "links": null,
+      "links": [],
       "hostname": null,
       "extraHosts": null,
       "pseudoTerminal": null,
@@ -54,15 +54,15 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "remind-me-servecr"
+      "name": "remind-me-server-container"
     }
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": "arn:aws:iam::675453480852:role/ecsTaskExecutionRole",
+  "taskRoleArn": null,
   "compatibilities": ["EC2", "FARGATE"],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-server:1",
-  "family": "remind-me-server",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:675453480852:task-definition/first-run-task-definition:3",
+  "family": "first-run-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -80,13 +80,19 @@
       "targetId": null,
       "targetType": null,
       "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
     },
     {
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "targetId": null,
@@ -105,7 +111,7 @@
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 1,
+  "revision": 3,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
