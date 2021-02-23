@@ -17,7 +17,7 @@
       "entryPoint": null,
       "portMappings": [
         {
-          "hostPort": 4000,
+          "hostPort": 80,
           "protocol": "tcp",
           "containerPort": 4000
         }
@@ -61,7 +61,7 @@
   "memory": "512",
   "taskRoleArn": "arn:aws:iam::675453480852:role/ecsTaskExecutionRole",
   "compatibilities": ["EC2", "FARGATE"],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-server:5",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-server:8",
   "family": "remind-me-server",
   "requiresAttributes": [
     {
@@ -80,12 +80,6 @@
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
     },
     {
@@ -93,12 +87,6 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.task-iam-role"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "targetId": null,
@@ -117,7 +105,7 @@
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 5,
+  "revision": 8,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,

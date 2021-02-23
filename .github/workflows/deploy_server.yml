@@ -9,7 +9,7 @@ on:
 
 jobs:
   push_to_docker_hub__deploy_to_ecs:
-    name: Push Docker image to Docker Hub
+    name: Push image to Docker Hub and then Pull from ECS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
