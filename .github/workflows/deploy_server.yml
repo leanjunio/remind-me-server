@@ -8,12 +8,13 @@ on:
     branches: [master]
 
 jobs:
-  push_to_registry:
+  push_to_docker_hub__deploy_to_ecs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
@@ -21,13 +22,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: leanjunio/remind-me-server
           tag_with_ref: true
-
-  push_to_ecr:
-    name: Deploy to ECR
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -65,7 +59,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: remind-me-servecr
-          image: 675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server
+          image: leanjunio/remind-me-server
 
       - name: Deploy to Amazon ECS service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
