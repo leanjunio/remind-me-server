@@ -17,6 +17,10 @@ const books = [
     author: "Paul Auster",
   },
   {
+    title: "Paradise of Gold",
+    author: "Paul Auster",
+  },
+  {
     title: "Twilight",
     author: "Stephanie Meyer",
   },
