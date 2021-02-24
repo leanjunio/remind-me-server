@@ -59,10 +59,3 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: remind-me-service
           cluster: remind-me-cluster
-
-      - name: Deploy to Amazon ECS service
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          cluster: remind-me-cluster
-          service: remind-me-service
