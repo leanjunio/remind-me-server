@@ -27,7 +27,7 @@
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": null,
-      "volumeFrom": [],
+      "volumesFrom": [],
       "stopTimeout": null,
       "image": "leanjunio/remind-me-server:latest",
       "startTimeout": null,
@@ -52,10 +52,8 @@
   "placementConstraints": [],
   "memory": "512",
   "taskRoleArn": "arn:aws:iam::675453480852:role/ecsTaskExecutionRole",
-  "compatibilities": [
-    "EC2"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me:1",
+  "compatibilities": ["EC2"],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me:4",
   "family": "remind-me",
   "requiresAttributes": [
     {
@@ -66,12 +64,10 @@
     }
   ],
   "pidMode": null,
-  "requiresCompatibilities": [
-    "EC2"
-  ],
+  "requiresCompatibilities": ["EC2"],
   "networkMode": null,
   "cpu": "512",
-  "revision": 1,
+  "revision": 4,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
