@@ -59,7 +59,6 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: remind-me-service
           cluster: remind-me-cluster
-          wait-for-service-stability: true
 
       - name: Deploy to Amazon ECS service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
