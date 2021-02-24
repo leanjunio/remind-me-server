@@ -34,17 +34,17 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Render Amazon ECS task definition
-        id: render-web-container
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          container-name: remind-me-server-container
-          image: docker.io/leanjunio/remind-me-server:latest
+      # - name: Render Amazon ECS task definition
+      #   id: render-web-container
+      #   uses: aws-actions/amazon-ecs-render-task-definition@v1
+      #   with:
+      #     task-definition: task-definition.json
+      #     container-name: remind-me-server-container
+      #     image: docker.io/leanjunio/remind-me-server:latest
 
       - name: Deploy to Amazon ECS service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ${{ steps.render-web-container.outputs.task-definition }}
+          task-definition: task-definition.json
           cluster: remind-me-cluster
           service: remind-me-service
