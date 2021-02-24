@@ -61,14 +61,6 @@ jobs:
           cluster: remind-me-cluster
           wait-for-service-stability: true
 
-      # - name: Render Amazon ECS task definition
-      #   id: render-web-container
-      #   uses: aws-actions/amazon-ecs-render-task-definition@v1
-      #   with:
-      #     task-definition: task-definition.json
-      #     container-name: remind-me-server-container
-      #     image: docker.io/leanjunio/remind-me-server:latest
-
       - name: Deploy to Amazon ECS service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
