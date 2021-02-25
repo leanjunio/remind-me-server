@@ -4,4 +4,4 @@ services:
     container_name: remind-me-server
     image: leanjunio/remind-me-server:latest
     ports:
-      - "80:4000"
+      - "4000:4000"
