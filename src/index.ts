@@ -17,8 +17,8 @@ const books = [
     author: "Yann Martel",
   },
   {
-    title: "City of Glass",
-    author: "Paul Auster",
+    title: "Stand By Me",
+    author: "Stephen King",
   },
   {
     title: "Paradise of Gold",
