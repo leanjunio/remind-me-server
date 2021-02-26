@@ -14,7 +14,7 @@ const typeDefs = gql`
 const books = [
   {
     title: "Life of Pi",
-    author: "Jim Browning",
+    author: "Yann Martel",
   },
   {
     title: "City of Glass",
