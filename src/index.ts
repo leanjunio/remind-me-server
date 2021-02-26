@@ -4,7 +4,7 @@ import typeDefs from "./schema";
 
 const books = [
   {
-    title: "Life of Pi",
+    title: "Life of Pie",
     author: "Yann Martel",
   },
   {
