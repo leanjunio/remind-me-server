@@ -29,6 +29,7 @@
   "dependencies": {
     "@typegoose/typegoose": "^7.4.8",
     "apollo-server": "^2.21.0",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "mongoose": "^5.11.18"
   }
 }

@@ -1,37 +1,17 @@
 import { ApolloServer } from "apollo-server";
+import mongoose from "mongoose";
 
+import { resolvers } from "./resolvers";
 import typeDefs from "./schema";
 
-const books = [
-  {
-    title: "Life of Pie",
-    author: "Yann Martel",
-  },
-  {
-    title: "Stand By Me",
-    author: "Stephen King",
-  },
-  {
-    title: "Paradise of Gold",
-    author: "Paul Auster",
-  },
-  {
-    title: "Twilight",
-    author: "Stephanie Meyer",
-  },
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-];
+const connString = process.env.CONNECTION_STRING ?? "mongodb://mongo:27017";
 
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
+mongoose.connect(connString, { useNewUrlParser: true });
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
