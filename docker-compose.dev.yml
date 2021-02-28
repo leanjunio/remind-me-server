@@ -12,6 +12,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: "${DB_USERNAME}"
       MONGO_INITDB_ROOT_PASSWORD: "${DB_PASSWORD}"
+    networks:
+      - remind-me
 
   remind-me-server:
     container_name: remind-me-server
@@ -32,8 +34,8 @@ services:
     environment:
       - DB_NAME="${DB_NAME}"
       - CONNECTION_STRING="mongodb://${DB_USERNAME}:${DB_PASSWORD}@mongo:27017"
-    links:
-      - mongo
+    networks:
+      - remind-me
 
   mongo-express:
     image: mongo-express
@@ -43,3 +45,9 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: "${DB_USERNAME}"
       ME_CONFIG_MONGODB_ADMINPASSWORD: "${DB_PASSWORD}"
+    networks:
+      - remind-me
+
+networks:
+  remind-me:
+    driver: bridge
