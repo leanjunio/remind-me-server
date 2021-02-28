@@ -2,6 +2,10 @@ version: "3" # optional since v1.27.0
 services:
   remind-me-server:
     container_name: remind-me-server
+    command: npm run dev:start
+    volumes:
+      - ./src:/usr/app/src
+      - ./nodemon.json:/usr/app/nodemon.json
     build:
       context: .
       dockerfile: Dockerfile.dev
