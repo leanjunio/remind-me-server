@@ -1,17 +1,22 @@
 import "reflect-metadata";
 import { createConnection, Connection } from "typeorm";
+import TypeGraphQL from "type-graphql";
 
 import { ApolloServer } from "apollo-server";
 
-import { resolvers } from "./resolvers";
+import { BookResolver } from "./resolvers/book-resolver";
+
 import typeDefs from "./schema";
 
 (async () => {
   const connection: Connection = await createConnection();
 
+  const schema = await TypeGraphQL.buildSchema({
+    resolvers: [BookResolver],
+  });
+
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema,
   });
 
   server.listen().then(({ url }) => {
