@@ -15,7 +15,7 @@ services:
       - ./nodemon.json:/usr/app/nodemon.json
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     image: remind-me-server:dev
     expose:
       - 4000
