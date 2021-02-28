@@ -1,6 +1,6 @@
 import { Resolver, Query } from "type-graphql";
 
-import { Book } from "../entities/Books";
+import { Book } from "../entity/Books";
 
 @Resolver()
 export class BookResolver {
