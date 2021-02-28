@@ -26,6 +26,7 @@
     "dev:start": "nodemon src/index.ts",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "dev:up": "docker-compose -f docker-compose.dev.yml up --build",
+    "dev:up-rc-rav": "docker-compose -f docker-compose.dev.yml up --build --force-recreate --renew-anon-volumes",
     "dev:down": "docker-compose -f docker-compose.dev.yml down",
     "prod:up": "docker-compose -f docker-compose.yml up --build --detach",
     "prod:down": "docker-compose -f docker-compose.yml down"

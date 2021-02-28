@@ -1,5 +1,5 @@
 {
-  "url": "mongodb://root:password@mongo:27017",
+  "url": "mongodb://mongo/remind-me-db",
   "type": "mongodb",
   "host": "mongo",
   "database": "remind-me-db",
