@@ -9,8 +9,7 @@ import { BookResolver } from "./resolvers/book-resolver";
 import typeDefs from "./schema";
 
 (async () => {
-  const connection: Connection = await createConnection();
-
+  const connection = await createConnection();
   const schema = await buildSchema({
     resolvers: [BookResolver],
   });
@@ -21,6 +20,6 @@ import typeDefs from "./schema";
   });
 
   server.listen().then(({ url }) => {
-    console.log(`Server ready at ${url}`);
+    console.log(`Server is ready at ${url}`);
   });
 })();

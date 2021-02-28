@@ -1,7 +1,7 @@
 {
-  "url": "mongodb://mongo/remind-me-db",
   "type": "mongodb",
-  "host": "mongo",
+  "host": "db",
+  "port": 27017,
   "database": "remind-me-db",
   "synchronize": true,
   "logging": false,

@@ -1,12 +1,12 @@
 version: "3" # optional since v1.27.0
 services:
-  mongo:
-    container_name: mongo
+  db:
+    container_name: mongo-server
     image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
-      - ~/mongodb/data/db:/data/db
+      - ~/docker-volumes/data/db:/data/db
     env_file:
       - .env
     environment:
@@ -21,12 +21,13 @@ services:
     ports:
       - 8081:8081
     environment:
+      ME_CONFIG_MONGODB_SERVER: mongo-server
       ME_CONFIG_MONGODB_ADMINUSERNAME: ${DB_USERNAME}
       ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_PASSWORD}
     networks:
       - mongo_network
     depends_on:
-      - mongo
+      - db
 
   remind-me-server:
     container_name: remind-me-server
@@ -48,7 +49,9 @@ services:
       - DB_NAME="${DB_NAME}"
       - CONNECTION_STRING="mongodb://${DB_USERNAME}:${DB_PASSWORD}@mongo:27017"
     depends_on:
-      - mongo
+      - db
+    networks:
+      - mongo_network
 
 networks:
   mongo_network:
