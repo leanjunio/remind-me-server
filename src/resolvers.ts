@@ -1,17 +1,12 @@
-interface IBook {
-  _id: string;
-  title: string;
-  author: string;
-}
+import { getModelForClass } from "@typegoose/typegoose";
+import Book from "./data-sources/Books";
+
+const BookModel = getModelForClass(Book);
 
 export const resolvers = {
   Query: {
-    books(): IBook {
-      return {
-        _id: "1",
-        title: "Twilight",
-        author: "Stephanie Meyer",
-      };
+    books() {
+      BookModel
     },
   },
 };

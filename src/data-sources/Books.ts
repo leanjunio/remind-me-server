@@ -1,4 +1,4 @@
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { prop } from "@typegoose/typegoose";
 
 class Book {
   @prop()
@@ -8,6 +8,4 @@ class Book {
   public author!: string;
 }
 
-const BookModel = getModelForClass(Book);
-
-export { BookModel as Book };
+export default Book;
