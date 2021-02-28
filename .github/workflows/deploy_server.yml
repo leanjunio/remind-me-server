@@ -68,4 +68,4 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: remind-me-server-ec2
-          cluster: remind-me
+          cluster: remind-me-cluster
