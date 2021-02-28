@@ -6,7 +6,11 @@ import typeDefs from "./schema";
 
 const connString = process.env.CONNECTION_STRING ?? "mongodb://mongo:27017";
 
-mongoose.connect(connString, { useNewUrlParser: true });
+mongoose.connect(connString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  dbName: process.env.DB_NAME,
+});
 
 const server = new ApolloServer({
   typeDefs,
