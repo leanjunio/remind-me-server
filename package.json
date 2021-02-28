@@ -33,10 +33,12 @@
   "dependencies": {
     "@typegoose/typegoose": "^7.4.8",
     "apollo-server": "^2.21.0",
+    "class-validator": "^0.13.1",
     "graphql": "^15.5.0",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.18",
     "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
     "typeorm": "^0.2.31"
   }
 }
