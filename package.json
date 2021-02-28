@@ -26,7 +26,9 @@
     "dev:start": "nodemon src/index.ts",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "dev:up": "docker-compose -f docker-compose.dev.yml up --build --detach",
-    "dev:down": "docker-compose -f docker-compose.dev.yml down"
+    "dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "prod:up": "docker-compose -f docker-compose.yml up --build --detach",
+    "prod:down": "docker-compose -f docker-compose.yml down"
   },
   "dependencies": {
     "@typegoose/typegoose": "^7.4.8",
