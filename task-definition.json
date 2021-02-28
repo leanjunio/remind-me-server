@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server:29e2cf24e07008595c88cdeec7888c7c064882a9",
+      "image": "675453480852.dkr.ecr.us-east-2.amazonaws.com/remind-me-server:cb7181045b52a3b654872e4c3a8aef067a37fa36",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -51,9 +51,9 @@
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": null,
+  "taskRoleArn": "arn:aws:iam::675453480852:role/ecsTaskExecutionRole",
   "compatibilities": ["EC2"],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-task:7",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:675453480852:task-definition/remind-me-task:9",
   "family": "remind-me-task",
   "requiresAttributes": [
     {
@@ -66,6 +66,12 @@
       "targetId": null,
       "targetType": null,
       "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
       "name": "ecs.capability.execution-role-ecr-pull"
     }
   ],
@@ -73,7 +79,7 @@
   "requiresCompatibilities": ["EC2"],
   "networkMode": null,
   "cpu": "1024",
-  "revision": 7,
+  "revision": 9,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
