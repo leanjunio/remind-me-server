@@ -1,5 +1,12 @@
 version: "3" # optional since v1.27.0
 services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
   remind-me-server:
     container_name: remind-me-server
     command: npm run dev:start
@@ -10,19 +17,14 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     image: remind-me-server:dev
+    expose:
+      - 4000
     ports:
       - 4000:4000
     environment:
       - CONNECTION_STRING=mongodb://root:example@mongo:27017
     links:
       - mongo
-
-  mongo:
-    image: mongo
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
 
   mongo-express:
     image: mongo-express
