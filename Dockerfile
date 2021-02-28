@@ -9,6 +9,7 @@ FROM node:12-alpine as execute
 WORKDIR /usr/app
 COPY package*.json ./
 COPY tsconfig*.json ./
+COPY ormconfig*.json ./
 RUN npm install
 COPY --from=builder /usr/app/dist ./dist
 EXPOSE 4000
