@@ -10,6 +10,7 @@ import typeDefs from "./schema";
 
 (async () => {
   const connection = await createConnection();
+
   const schema = await buildSchema({
     resolvers: [BookResolver],
   });
